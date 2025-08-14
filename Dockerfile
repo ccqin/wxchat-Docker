@@ -8,7 +8,7 @@ RUN apk add --no-cache \
       python3 \
       py3-pip \
       py3-flask \
-      py3-cryptodome \
+      py3-pycryptodome \
     && rm -rf /var/cache/apk/* /tmp/*
 
 COPY --chmod=755 ./rootfs /
