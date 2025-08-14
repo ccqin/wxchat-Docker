@@ -20,7 +20,7 @@ if not all([sToken, sEncodingAESKey, sCorpID]):
     # 在实际部署中，这里可能需要更优雅地退出或处理
     exit(1)
 
-@app.route('/api/v1/message/', methods=['GET', 'POST'])
+@app.route('/', methods=['GET', 'POST'])
 def wechat_message():
     wxcpt = WXBizMsgCrypt(sToken, sEncodingAESKey, sCorpID)
     sReqMsgSig = request.args.get('msg_signature')
