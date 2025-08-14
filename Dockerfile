@@ -2,7 +2,7 @@ FROM alpine:3.21
 
 ENV TZ=Asia/Shanghai
 
-RUN apk add --no-cache tzdata nginx python3
+RUN apk add --no-cache tzdata nginx python3 py3-pip
 
 COPY rootfs/app/requirements.txt /app/requirements.txt
 
