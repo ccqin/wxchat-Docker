@@ -35,11 +35,11 @@ class SHA1:
         @return: 安全签名
         """
         try:
-            sortlist = [token, timestamp, nonce, encrypt]
+            sortlist = [str(token), str(timestamp), str(nonce), str(encrypt)]
             sortlist.sort()
             sha = hashlib.sha1()
-            sha.update("".join(sortlist).encode())
-            return  sha.hexdigest()
+            sha.update("".join(sortlist).encode('utf-8'))
+            return sha.hexdigest()
         except Exception as e:
             # print e
             throw_exception(e, FormatException)
