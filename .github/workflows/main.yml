@@ -36,9 +36,9 @@ jobs:
         
       - 
         name: Debug Secrets
-          run: |
-            echo "DOCKER_USERNAME: $DOCKER_USERNAME"
-            echo "DOCKER_PASSWORD: $DOCKER_PASSWORD"
+        run: |
+          echo "DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}"
+          echo "DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}"
 
       - 
         name: Login DockerHub
