@@ -1,6 +1,6 @@
 # MoviePilot 微信转发代理 Docker
 
-[![Build](https://github.com/ccqin/wxchat-Docker/actions/workflows/main.yml/badge.svg)](https://github.com/ccqin/wxchat-Docker/actions/workflows/main.yml) [![Docker readme update](https://github.com/DDS-Derek/wxchat-Docker/actions/workflows/readmeupdate.yml/badge.svg)](https://github.com/DDS-Derek/wxchat-Docker/actions/workflows/readmeupdate.yml)
+[![Build](https://github.com/ccqin/wxchat-Docker/actions/workflows/main.yml/badge.svg)](https://github.com/ccqin/wxchat-Docker/actions/workflows/main.yml) [![Docker readme update](https://github.com/ccqin/wxchat-Docker/actions/workflows/readmeupdate.yml/badge.svg)](https://github.com/ccqin/wxchat-Docker/actions/workflows/readmeupdate.yml)
 
 ```bash
 docker run -d \
