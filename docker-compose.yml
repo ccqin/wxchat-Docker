@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  wxchat:
+    build: .
+    container_name: wxchat
+    restart: always
+    ports:
+      - "80:80"
+    environment:
+      - WECOM_TOKEN=symedia
+      - WECOM_ENCODING_AES_KEY=your_encoding_aes_key_here
+      - WECOM_CORP_ID=your_corp_id_here
