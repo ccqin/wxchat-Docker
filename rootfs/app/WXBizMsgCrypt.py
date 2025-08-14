@@ -177,7 +177,7 @@ class Prpcrypt:
             throw_exception(e, FormatException)
         if from_corpid.decode() != corpid:
             throw_exception("corpid dismatch", FormatException)
-        return xml_content
+        return 0, xml_content
 
     def get_random_str(self):
         """ 随机生成16位字符串
