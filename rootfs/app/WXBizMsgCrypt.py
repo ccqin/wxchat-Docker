@@ -132,7 +132,7 @@ class Prpcrypt:
         @return: 加密得到的字符串
         """
         # 16位随机字符串添加到明文开头
-        text = self.get_random_str() + struct.pack("I", socket.htonl(len(text))) + text + corpid
+        text = self.get_random_str() + struct.pack("I", socket.htonl(len(text.encode()))) + text.encode() + corpid.encode()
         # 使用自定义的填充方式对明文进行补位填充
         pkcs7 = PKCS7Encoder()
         text = pkcs7.encode(text)
@@ -217,7 +217,7 @@ class WXBizMsgCrypt(object):
         ret,sReplyEchoStr = pc.decrypt(sEchoStr,self.m_sCorpId)
         if( ret != 0 ):
             throw_exception("[error]: decrypt echostr failed!", FormatException)
-        return sReplyEchoStr
+        return sReplyEchoStr.decode('utf-8')
 
     def EncryptMsg(self, sReplyMsg, sNonce, timestamp = None):
         #将回复的消息打包成xml格式
@@ -243,4 +243,4 @@ class WXBizMsgCrypt(object):
         #解密
         pc = Prpcrypt(self.key)
         sMsg = pc.decrypt(sEncryptMsg,self.m_sCorpId)
-        return sMsg
+        return sMsg.decode('utf-8')
